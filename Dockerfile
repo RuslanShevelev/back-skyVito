@@ -13,6 +13,8 @@ ENV REACT_APP_FRONTEND_ENV=PRODUCTION
 
 RUN npm run build
 
+CMD ["docker-compose", "-f docker-compose-backend.yaml up -d"]
+
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
 FROM nginx:alpine
 
